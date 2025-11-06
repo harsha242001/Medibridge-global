@@ -3,73 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import cardiologyImage from "@/assets/cardiology.jpg";
-import orthopedicsImage from "@/assets/orthopedics.jpg";
-import oncologyImage from "@/assets/oncology.jpg";
-
-const serviceData: Record<string, any> = {
-  cardiology: {
-    title: "Cardiology",
-    image: cardiologyImage,
-    description: "Our cardiology department offers comprehensive heart care with the latest technology and experienced specialists.",
-    treatments: [
-      "Coronary Artery Bypass Grafting (CABG)",
-      "Heart Valve Replacement",
-      "Angioplasty and Stenting",
-      "Pacemaker Implantation",
-      "Cardiac Rehabilitation",
-    ],
-    whyChoose: [
-      "JCI accredited cardiac centers",
-      "Success rate of 98% for major procedures",
-      "Latest minimally invasive techniques",
-      "Experienced international cardiologists",
-      "Comprehensive pre and post-operative care",
-    ],
-  },
-  orthopedics: {
-    title: "Orthopedics",
-    image: orthopedicsImage,
-    description: "Advanced orthopedic care including joint replacements and sports medicine with minimally invasive surgical techniques.",
-    treatments: [
-      "Total Hip Replacement",
-      "Total Knee Replacement",
-      "Spine Surgery",
-      "Sports Injury Treatment",
-      "Arthroscopic Surgery",
-    ],
-    whyChoose: [
-      "Specialist orthopedic surgeons",
-      "Advanced robotic-assisted surgery",
-      "Comprehensive rehabilitation programs",
-      "Fast recovery protocols",
-      "International standard implants",
-    ],
-  },
-  oncology: {
-    title: "Oncology",
-    image: oncologyImage,
-    description: "World-class cancer treatment with cutting-edge technology and multidisciplinary care teams.",
-    treatments: [
-      "Chemotherapy",
-      "Radiation Therapy",
-      "Immunotherapy",
-      "Targeted Therapy",
-      "Surgical Oncology",
-    ],
-    whyChoose: [
-      "Multidisciplinary tumor boards",
-      "Latest cancer treatment protocols",
-      "Advanced radiation therapy equipment",
-      "Personalized treatment plans",
-      "Psychosocial support services",
-    ],
-  },
-};
+import { serviceDetails } from "@/data/serviceDetails";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
-  const service = serviceData[serviceId || ""] || serviceData.cardiology;
+  const service = serviceDetails[serviceId || ""] || serviceDetails.cardiology;
 
   return (
     <div className="min-h-screen">
