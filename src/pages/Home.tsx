@@ -56,7 +56,9 @@ const Home = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '2s'
+        }} />
         </div>
         
         <div className="container mx-auto px-4 z-10">
@@ -89,17 +91,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center group animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 mb-4 group-hover:scale-110 transition-all duration-500 group-hover:shadow-xl">
-                    <Icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <div className="text-4xl md:text-5xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{stat.value}</div>
-                  <div className="text-muted-foreground font-medium">{stat.label}</div>
-                </div>
-              );
-            })}
+            const Icon = stat.icon;
+            return;
+          })}
           </div>
         </div>
       </section>
@@ -120,11 +114,11 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <div key={service.id} className="animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
+            {services.map((service, index) => <div key={service.id} className="animate-fade-in-scale" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <ServiceCard {...service} />
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <div className="text-center">
@@ -145,11 +139,15 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-xl md:text-2xl mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-xl md:text-2xl mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{
+          animationDelay: '0.1s'
+        }}>
             Get a personalized treatment plan and quote today
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-background text-foreground hover:bg-background/90 hover:scale-105 shadow-2xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <Button size="lg" className="bg-background text-foreground hover:bg-background/90 hover:scale-105 shadow-2xl animate-slide-up" style={{
+            animationDelay: '0.2s'
+          }}>
               Request Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
