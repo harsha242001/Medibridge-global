@@ -9,48 +9,47 @@ import heroImage from "@/assets/hero-medical.jpg";
 import cardiologyImage from "@/assets/cardiology.jpg";
 import orthopedicsImage from "@/assets/orthopedics.jpg";
 import oncologyImage from "@/assets/oncology.jpg";
-
-const services = [
-  {
-    id: "cardiology",
-    title: "Cardiology",
-    description: "Advanced heart care with state-of-the-art facilities and experienced cardiologists",
-    image: cardiologyImage,
-  },
-  {
-    id: "orthopedics",
-    title: "Orthopedics",
-    description: "Comprehensive joint replacement and orthopedic surgery solutions",
-    image: orthopedicsImage,
-  },
-  {
-    id: "oncology",
-    title: "Oncology",
-    description: "World-class cancer treatment with cutting-edge technology",
-    image: oncologyImage,
-  },
-];
-
-const stats = [
-  { icon: Users, value: "5000+", label: "Patients Served" },
-  { icon: Award, value: "JCI", label: "Accredited Hospitals" },
-  { icon: Globe, value: "15+", label: "Countries Served" },
-  { icon: CheckCircle2, value: "98%", label: "Success Rate" },
-];
-
+const services = [{
+  id: "cardiology",
+  title: "Cardiology",
+  description: "Advanced heart care with state-of-the-art facilities and experienced cardiologists",
+  image: cardiologyImage
+}, {
+  id: "orthopedics",
+  title: "Orthopedics",
+  description: "Comprehensive joint replacement and orthopedic surgery solutions",
+  image: orthopedicsImage
+}, {
+  id: "oncology",
+  title: "Oncology",
+  description: "World-class cancer treatment with cutting-edge technology",
+  image: oncologyImage
+}];
+const stats = [{
+  icon: Users,
+  value: "5000+",
+  label: "Patients Served"
+}, {
+  icon: Award,
+  value: "JCI",
+  label: "Accredited Hospitals"
+}, {
+  icon: Globe,
+  value: "15+",
+  label: "Countries Served"
+}, {
+  icon: CheckCircle2,
+  value: "98%",
+  label: "Success Rate"
+}];
 const Home = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
       <section className="relative h-[600px] md:h-[700px] flex items-center mt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Medical facility"
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Medical facility" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 to-foreground/60" />
         </div>
         
@@ -84,15 +83,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center">
-                  <Icon className="h-8 w-8 text-primary mx-auto mb-2" />
-                  <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              );
-            })}
+            const Icon = stat.icon;
+            return;
+          })}
           </div>
         </div>
       </section>
@@ -113,9 +106,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
-            ))}
+            {services.map(service => <ServiceCard key={service.id} {...service} />)}
           </div>
 
           <div className="text-center">
@@ -148,8 +139,6 @@ const Home = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
