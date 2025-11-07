@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,14 +11,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">MB</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">MediBridge Global</h1>
-              <p className="text-xs text-muted-foreground">Your Bridge to Better Health</p>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={logo} alt="MediBridge Global" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
