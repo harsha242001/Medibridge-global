@@ -47,29 +47,35 @@ const Home = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center mt-20">
+      <section className="relative h-[650px] md:h-[750px] flex items-center mt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Medical facility" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 to-foreground/60" />
+          <img src={heroImage} alt="Medical facility" className="w-full h-full object-cover scale-105 animate-slow-zoom" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/60" />
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         </div>
         
         <div className="container mx-auto px-4 z-10">
-          <div className="max-w-2xl text-background">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              World-Class Medical Care in India
+          <div className="max-w-3xl text-background animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              World-Class Medical Care in <span className="text-primary">India</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-background/90">
+            <p className="text-xl md:text-2xl mb-10 text-background/95 leading-relaxed">
               Your Bridge to Better Health - Comprehensive treatment and accommodation packages for patients from South Africa and Zimbabwe
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button size="lg" variant="gradient" className="shadow-2xl">
                   Get a Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/services">
-                <Button size="lg" variant="outline" className="bg-background/10 hover:bg-background/20 text-background border-background/30">
+                <Button size="lg" variant="outline" className="bg-background/10 hover:bg-background/20 text-background border-background/40 backdrop-blur-sm hover:border-background/60">
                   View Services
                 </Button>
               </Link>
@@ -79,13 +85,21 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-secondary/20">
+      <section className="py-20 bg-gradient-to-b from-secondary/30 to-background relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return;
-          })}
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="text-center group animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 mb-4 group-hover:scale-110 transition-all duration-500 group-hover:shadow-xl">
+                    <Icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{stat.value}</div>
+                  <div className="text-muted-foreground font-medium">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -94,24 +108,28 @@ const Home = () => {
       <ProcessSteps />
 
       {/* Featured Services */}
-      <section className="py-20">
+      <section className="py-24 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-20 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Our Medical Services
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               Expert care across multiple specialties with internationally accredited hospitals
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {services.map(service => <ServiceCard key={service.id} {...service} />)}
+            {services.map((service, index) => (
+              <div key={service.id} className="animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
+                <ServiceCard {...service} />
+              </div>
+            ))}
           </div>
 
           <div className="text-center">
             <Link to="/services">
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="hover:border-primary hover:text-primary hover:shadow-lg">
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -121,16 +139,17 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-24 gradient-animate text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-10 opacity-95 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Get a personalized treatment plan and quote today
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-background text-foreground hover:bg-background/90">
+            <Button size="lg" className="bg-background text-foreground hover:bg-background/90 hover:scale-105 shadow-2xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
               Request Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
