@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,14 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">MB</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground">MediBridge Global</h3>
-                <p className="text-xs text-muted-foreground">Your Bridge to Better Health</p>
-              </div>
+            <div className="mb-4">
+              <img src={logo} alt="MediBridge Global" className="h-16 w-auto mb-3" />
             </div>
             <p className="text-sm text-muted-foreground">
               Connecting patients from South Africa and Zimbabwe to world-class medical care in India.

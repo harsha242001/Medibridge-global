@@ -13,6 +13,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="MediBridge Global" className="h-12 w-auto" />
+            <div>
+              <h1 className="text-xl font-bold text-foreground">MediBridge Global</h1>
+              <p className="text-xs text-muted-foreground">Your Bridge to Better Health</p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
