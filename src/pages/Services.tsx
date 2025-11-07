@@ -10,6 +10,9 @@ import nephrologyImage from "@/assets/nephrology.jpg";
 import dentistryImage from "@/assets/dentistry.jpg";
 import vascularImage from "@/assets/vascular.jpg";
 import plasticSurgeryImage from "@/assets/plastic-surgery.jpg";
+import pulmonologyImage from "@/assets/pulmonology.jpg";
+import gastroenterologyImage from "@/assets/gastroenterology.jpg";
+import dermatologyImage from "@/assets/dermatology.jpg";
 
 const services = [
   {
@@ -38,9 +41,27 @@ const services = [
   },
   {
     id: "oncology",
-    title: "Oncology",
-    description: "Comprehensive cancer care including chemotherapy, radiation therapy, and surgical oncology",
+    title: "Oncology - Cancer Care",
+    description: "Comprehensive cancer treatment with medical, surgical & radiation oncology, bone marrow transplant",
     image: oncologyImage,
+  },
+  {
+    id: "pulmonology",
+    title: "Pulmonology & Respiratory",
+    description: "Advanced pulmonology, respiratory medicine, sleep & allergy studies with interventional procedures",
+    image: pulmonologyImage,
+  },
+  {
+    id: "gastroenterology",
+    title: "Gastroenterology & Hepatology",
+    description: "Expert gastro & liver care with robotic surgeries, liver transplants, and advanced endoscopy",
+    image: gastroenterologyImage,
+  },
+  {
+    id: "dermatology",
+    title: "Dermatology & Aesthetics",
+    description: "Comprehensive skin care, cosmetic dermatology, hair transplants, and advanced aesthetic treatments",
+    image: dermatologyImage,
   },
   {
     id: "ophthalmology",
@@ -78,12 +99,6 @@ const services = [
     description: "Comprehensive internal medicine, endocrinology, infectious diseases & metabolic disorders",
     image: cardiologyImage,
   },
-  {
-    id: "gastroenterology",
-    title: "Gastroenterology",
-    description: "Digestive system care including liver transplant and advanced endoscopic procedures",
-    image: oncologyImage,
-  },
 ];
 
 const Services = () => {
@@ -91,20 +106,23 @@ const Services = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <section className="pt-32 pb-20 bg-gradient-to-b from-secondary/20 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+      <section className="pt-32 pb-24 bg-gradient-to-b from-secondary/30 via-background to-secondary/10 relative">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20 animate-slide-up">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
               Our Medical Services
             </h1>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               World-class treatment across multiple specialties with internationally accredited hospitals and experienced medical professionals
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+            {services.map((service, index) => (
+              <div key={service.id} className="animate-fade-in-scale" style={{ animationDelay: `${index * 0.05}s` }}>
+                <ServiceCard {...service} />
+              </div>
             ))}
           </div>
         </div>
