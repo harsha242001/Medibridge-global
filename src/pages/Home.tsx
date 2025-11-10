@@ -91,9 +91,15 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return;
-          })}
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="text-center group hover-lift animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <Icon className="h-12 w-12 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
+                  <div className="text-4xl font-bold text-foreground mb-2 gradient-text">{stat.value}</div>
+                  <div className="text-muted-foreground">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
