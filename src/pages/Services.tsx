@@ -112,31 +112,13 @@ const Services = () => {
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 animate-slide-up">
+          <div className="text-center mb-16 animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 gradient-text">
               Our Medical Services
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               World-class treatment across multiple specialties with internationally accredited hospitals and experienced medical professionals
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20 max-w-5xl mx-auto">
-            {[
-              { number: "14+", label: "Specialties" },
-              { number: "50+", label: "Partner Hospitals" },
-              { number: "500+", label: "Expert Doctors" },
-              { number: "10,000+", label: "Patients Treated" }
-            ].map((stat, index) => (
-              <div 
-                key={stat.label}
-                className="glass p-6 rounded-2xl text-center hover-lift animate-fade-in-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
