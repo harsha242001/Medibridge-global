@@ -9,22 +9,36 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Quote Request Received!",
-        description: "We'll contact you within 24 hours with your personalized treatment plan.",
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Redirect to thank you page
+        window.location.href = "/thank-you";
+      } else {
+        console.error("Form submission failed:", data);
+        alert("Something went wrong. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
       setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    }
   };
 
   return (
@@ -45,30 +59,39 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Web3Forms Access Key */}
+                <input type="hidden" name="access_key" value="1137fef7-41f6-472b-b176-864a682d8b68" />
+                
+                {/* Redirect after submission */}
+                <input type="hidden" name="redirect" value="https://medglobalaccess.com/thank-you" />
+                
+                {/* Honeypot spam protection */}
+                <input type="text" name="botcheck" className="hidden" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Full Name *
                     </label>
-                    <Input required placeholder="John Doe" />
+                    <Input required name="name" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Country *
                     </label>
-                    <Select required>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select country" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="uae">UAE</SelectItem>
-                        <SelectItem value="saudi-arabia">Saudi Arabia</SelectItem>
-                        <SelectItem value="south-africa">South Africa</SelectItem>
-                        <SelectItem value="nigeria">Nigeria</SelectItem>
-                        <SelectItem value="kenya">Kenya</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <select 
+                      name="country" 
+                      required 
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                    >
+                      <option value="">Select country</option>
+                      <option value="UAE">UAE</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
                 </div>
 
@@ -77,13 +100,13 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone / WhatsApp *
                     </label>
-                    <Input required type="tel" placeholder="+27 123 456 789" />
+                    <Input required name="phone" type="tel" placeholder="+27 123 456 789" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Email *
                     </label>
-                    <Input required type="email" placeholder="john@example.com" />
+                    <Input required name="email" type="email" placeholder="john@example.com" />
                   </div>
                 </div>
 
@@ -91,19 +114,26 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Medical Service Needed *
                   </label>
-                  <Select required>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="cardiology">Cardiology</SelectItem>
-                      <SelectItem value="orthopedics">Orthopedics</SelectItem>
-                      <SelectItem value="oncology">Oncology</SelectItem>
-                      <SelectItem value="neurology">Neurology</SelectItem>
-                      <SelectItem value="ophthalmology">Ophthalmology</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <select 
+                    name="service" 
+                    required 
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  >
+                    <option value="">Select service</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Oncology">Oncology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Gastroenterology">Gastroenterology</option>
+                    <option value="Nephrology">Nephrology</option>
+                    <option value="Pulmonology">Pulmonology</option>
+                    <option value="ENT">ENT</option>
+                    <option value="Dentistry">Dentistry</option>
+                    <option value="Plastic Surgery">Plastic Surgery</option>
+                    <option value="Vascular Surgery">Vascular Surgery</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
 
                 <div>
@@ -112,6 +142,7 @@ const Contact = () => {
                   </label>
                   <Textarea
                     required
+                    name="message"
                     placeholder="Please describe your condition and treatment needed..."
                     rows={4}
                   />
@@ -121,7 +152,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Preferred Travel Date
                   </label>
-                  <Input type="date" />
+                  <Input name="travel_date" type="date" />
                 </div>
 
                 <Button
