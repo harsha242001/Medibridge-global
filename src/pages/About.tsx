@@ -64,7 +64,7 @@ const About = () => {
               About MedGlobalAccess
             </h1>
             <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
-              Bridging continents to deliver world-class healthcare from South Africa and Zimbabwe to India
+              Bridging continents to deliver world-class healthcare from Middle East and Africa to India
             </p>
           </div>
 
@@ -77,7 +77,7 @@ const About = () => {
                 </div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  MedGlobalAccess connects patients from South Africa and Zimbabwe to world-class medical care in India. 
+                  MedGlobalAccess connects patients from Middle East and Africa to world-class medical care in India. 
                   We believe everyone deserves access to high-quality, affordable healthcare, and we're committed to making that a reality.
                 </p>
               </CardContent>

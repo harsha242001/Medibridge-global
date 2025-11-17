@@ -61,8 +61,11 @@ const Contact = () => {
                         <SelectValue placeholder="Select country" />
                       </SelectTrigger>
                       <SelectContent>
+                        <SelectItem value="uae">UAE</SelectItem>
+                        <SelectItem value="saudi-arabia">Saudi Arabia</SelectItem>
                         <SelectItem value="south-africa">South Africa</SelectItem>
-                        <SelectItem value="zimbabwe">Zimbabwe</SelectItem>
+                        <SelectItem value="nigeria">Nigeria</SelectItem>
+                        <SelectItem value="kenya">Kenya</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>

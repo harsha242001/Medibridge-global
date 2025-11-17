@@ -50,7 +50,7 @@ const Home = () => {
               World-Class Medical Care in <span className="text-primary">India</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-background/95 leading-relaxed">
-              Your Bridge to Better Health - Comprehensive treatment and accommodation packages for patients from South Africa and Zimbabwe
+              Your Bridge to Better Health - Comprehensive treatment and accommodation packages for patients from Middle East and Africa
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
