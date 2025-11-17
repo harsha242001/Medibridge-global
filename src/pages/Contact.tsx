@@ -147,7 +147,7 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-foreground">Email</div>
-                      <div className="text-sm text-muted-foreground">info@medibridgeglobal.com</div>
+                      <div className="text-sm text-muted-foreground">info@medglobalaccess.com</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">

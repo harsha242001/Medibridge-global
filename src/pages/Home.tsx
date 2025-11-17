@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Users, Award, Globe } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
@@ -24,23 +24,6 @@ const services = [{
   title: "Oncology",
   description: "World-class cancer treatment with cutting-edge technology",
   image: oncologyImage
-}];
-const stats = [{
-  icon: Users,
-  value: "5000+",
-  label: "Patients Served"
-}, {
-  icon: Award,
-  value: "JCI",
-  label: "Accredited Hospitals"
-}, {
-  icon: Globe,
-  value: "15+",
-  label: "Countries Served"
-}, {
-  icon: CheckCircle2,
-  value: "98%",
-  label: "Success Rate"
 }];
 const Home = () => {
   return <div className="min-h-screen">
@@ -86,23 +69,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-b from-secondary/30 to-background relative">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center group hover-lift animate-fade-in-scale" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <Icon className="h-12 w-12 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
-                  <div className="text-4xl font-bold text-foreground mb-2 gradient-text">{stat.value}</div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Process Steps */}
       <ProcessSteps />
