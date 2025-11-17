@@ -12,9 +12,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="MediBridge Global" className="h-12 w-auto" />
+            <img src={logo} alt="MedGlobalAccess" className="h-12 w-auto" />
             <div>
-              <h1 className="text-xl font-bold text-foreground">MediBridge Global</h1>
+              <h1 className="text-xl font-bold text-foreground">MedGlobalAccess</h1>
               <p className="text-xs text-muted-foreground">Your Bridge to Better Health</p>
             </div>
           </Link>

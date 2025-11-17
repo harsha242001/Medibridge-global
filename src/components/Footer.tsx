@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <img src={logo} alt="MediBridge Global" className="h-16 w-auto mb-3" />
+              <img src={logo} alt="MedGlobalAccess" className="h-16 w-auto mb-3" />
             </div>
             <p className="text-sm text-muted-foreground">
               Connecting patients from South Africa and Zimbabwe to world-class medical care in India.
@@ -61,7 +61,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
                 <Mail className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <span>info@medibridgeglobal.com</span>
+                <span>info@medglobalaccess.com</span>
               </li>
               <li className="flex items-start space-x-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} MediBridge Global. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MedGlobalAccess. All rights reserved.</p>
         </div>
       </div>
     </footer>
