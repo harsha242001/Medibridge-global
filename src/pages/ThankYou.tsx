@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ThankYou = () => {
   return (
@@ -45,6 +46,7 @@ const ThankYou = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

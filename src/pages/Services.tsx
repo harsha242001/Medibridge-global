@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import ServiceCard from "@/components/ServiceCard";
 import cardiologyImage from "@/assets/cardiology.jpg";
 import orthopedicsImage from "@/assets/orthopedics.jpg";
@@ -132,6 +133,7 @@ const Services = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

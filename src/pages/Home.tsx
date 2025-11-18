@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import heroImage from "@/assets/hero-medical.jpg";
@@ -50,7 +51,7 @@ const Home = () => {
               World-Class Medical Care in <span className="text-primary">India</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-background/95 leading-relaxed">
-              Your Bridge to Better Health - Comprehensive treatment and accommodation packages for patients from Middle East and Africa
+              Your Bridge to Better Health - Comprehensive treatment and accommodation packages for patients from African countries and Middle East
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
@@ -128,6 +129,7 @@ const Home = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>;
 };
 export default Home;

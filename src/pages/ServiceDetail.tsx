@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { serviceDetails } from "@/data/serviceDetails";
 
 const ServiceDetail = () => {
@@ -82,6 +83,7 @@ const ServiceDetail = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
