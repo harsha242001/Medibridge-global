@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +11,7 @@ import Footer from "@/components/Footer";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,8 +29,8 @@ const Contact = () => {
       const data = await response.json();
 
       if (data.success) {
-        // Redirect to thank you page
-        window.location.href = "/thank-you";
+        // Redirect to thank you page using React Router
+        navigate("/thank-you");
       } else {
         console.error("Form submission failed:", data);
         alert("Something went wrong. Please try again.");
