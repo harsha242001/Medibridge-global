@@ -62,9 +62,6 @@ const Contact = () => {
                 {/* Web3Forms Access Key */}
                 <input type="hidden" name="access_key" value="1137fef7-41f6-472b-b176-864a682d8b68" />
                 
-                {/* Redirect after submission */}
-                <input type="hidden" name="redirect" value="https://medglobalaccess.com/thank-you" />
-                
                 {/* Honeypot spam protection */}
                 <input type="text" name="botcheck" className="hidden" />
 
