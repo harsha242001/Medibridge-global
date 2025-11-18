@@ -12,7 +12,7 @@ const Footer = () => {
               <img src={logo} alt="MedGlobalAccess" className="h-16 w-auto mb-3" />
             </div>
             <p className="text-sm text-muted-foreground">
-              Connecting patients from Middle East and Africa to world-class medical care in India.
+              Connecting patients from African countries and Middle East to world-class medical care in India.
             </p>
           </div>
 

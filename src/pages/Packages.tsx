@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import PackageCard from "@/components/PackageCard";
 import accommodationImage from "@/assets/accommodation.jpg";
 
@@ -172,6 +173,7 @@ const Packages = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
